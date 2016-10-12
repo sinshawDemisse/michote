@@ -9,5 +9,9 @@ package com.michote.dao;
  * Oct 11, 2016
  */
 public class Test {
+	
+	public void test(){
+		
+	}
 
 }
