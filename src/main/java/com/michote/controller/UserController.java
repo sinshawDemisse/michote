@@ -1,8 +1,8 @@
 package com.michote.controller;
 
 
-import com.michote.dao.UserDao;
-import com.michote.entity.User;
+import com.michote.dao.SampleUserDao;
+import com.michote.entity.SampleUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,22 +21,22 @@ public class UserController {
     /**
      * /create  --> Create a new user and save it in the database.
      *
-     * @param email User's email
-     * @param name User's name
+     * @param email SampleUser's email
+     * @param name SampleUser's name
      * @return A string describing if the user is succesfully created or not.
      */
     @RequestMapping("/create")
     @ResponseBody
     public String create(String email, String name) {
-        User user = null;
+        SampleUser user = null;
         try {
-            user = new User(email, name);
+            user = new SampleUser(email, name);
             userDao.save(user);
         }
         catch (Exception ex) {
             return "Error creating the user: " + ex.toString();
         }
-        return "User succesfully created! (id = " + user.getId() + ")";
+        return "SampleUser succesfully created! (id = " + user.getId() + ")";
     }
 
     /**
@@ -49,13 +49,13 @@ public class UserController {
     @ResponseBody
     public String delete(long id) {
         try {
-            User user = new User(id);
+            SampleUser user = new SampleUser(id);
             userDao.delete(user);
         }
         catch (Exception ex) {
             return "Error deleting the user: " + ex.toString();
         }
-        return "User succesfully deleted!";
+        return "SampleUser succesfully deleted!";
     }
 
     /**
@@ -69,11 +69,11 @@ public class UserController {
     public String getByEmail(String email) {
         String userId;
         try {
-            User user = userDao.findByEmail(email);
+            SampleUser user = userDao.findByEmail(email);
             userId = String.valueOf(user.getId());
         }
         catch (Exception ex) {
-            return "User not found";
+            return "SampleUser not found";
         }
         return "The user id is: " + userId;
     }
@@ -88,11 +88,11 @@ public class UserController {
     public String getByName(String name) {
         String userId;
         try {
-            User user = userDao.findByName(name);
+            SampleUser user = userDao.findByName(name);
             userId = String.valueOf(user.getId());
         }
         catch (Exception ex) {
-            return "User not found";
+            return "SampleUser not found";
         }
         return "The user id is: " + userId;
     }
@@ -109,7 +109,7 @@ public class UserController {
     @ResponseBody
     public String updateUser(long id, String email, String name) {
         try {
-            User user = userDao.findOne(id);
+            SampleUser user = userDao.findOne(id);
             user.setEmail(email);
             user.setName(name);
             userDao.save(user);
@@ -117,7 +117,7 @@ public class UserController {
         catch (Exception ex) {
             return "Error updating the user: " + ex.toString();
         }
-        return "User succesfully updated!";
+        return "SampleUser succesfully updated!";
     }
 
     // ------------------------
@@ -125,6 +125,6 @@ public class UserController {
     // ------------------------
 
     @Autowired
-    private UserDao userDao;
+    private SampleUserDao userDao;
 
 } // class UserController

@@ -17,47 +17,55 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
-@Table(name = "HouseContact")
+@Table(name = "houseContact")
 public class HouseContact {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long HouseId;
+	private long houseContactId;
 	
 	@NotNull
 	private String contactPreferance;
 	private String contactName;
 	private String contactEmail;
 	private String contactPhone;
-	
-	
-	public long getHouseId() {
-		return HouseId;
+
+	public long getHouseContactId() {
+		return houseContactId;
 	}
-	public void setHouseId(long houseId) {
-		HouseId = houseId;
+
+	public void setHouseContactId(long houseContactId) {
+		this.houseContactId = houseContactId;
 	}
+
 	public String getContactPreferance() {
 		return contactPreferance;
 	}
+
 	public void setContactPreferance(String contactPreferance) {
 		this.contactPreferance = contactPreferance;
 	}
+
 	public String getContactName() {
 		return contactName;
 	}
+
 	public void setContactName(String contactName) {
 		this.contactName = contactName;
 	}
+
 	public String getContactEmail() {
 		return contactEmail;
 	}
+
 	public void setContactEmail(String contactEmail) {
 		this.contactEmail = contactEmail;
 	}
+
 	public String getContactPhone() {
 		return contactPhone;
 	}
+
 	public void setContactPhone(String contactPhone) {
 		this.contactPhone = contactPhone;
 	}
