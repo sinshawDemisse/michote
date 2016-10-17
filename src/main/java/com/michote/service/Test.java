@@ -10,4 +10,7 @@ package com.michote.service;
  */
 public class Test {
 
+    public void test(){
+
+    }
 }
