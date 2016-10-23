@@ -1,6 +1,6 @@
 package com.michote.dao;
 
-import com.michote.entity.Image;
+import com.michote.entity.HouseImage;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,12 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
  */
 
 @Transactional
-public interface ImageDao extends CrudRepository<Image, Long> {
+public interface ImageDao extends CrudRepository<HouseImage, Long> {
 
     /**
      * Return the user having the passed imageId or null if no image is found.
      *
      * @param imageId the image imageId.
      */
-    public Image findByImageId(long imageId);
+    public HouseImage findByImageId(long imageId);
 }

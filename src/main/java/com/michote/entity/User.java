@@ -34,13 +34,18 @@ public class User {
 
     // The user's phoneNo
     private String phoneNo;
-
-    @Embedded
-    private HouseAddress houseAddress;
+    
+    private String contactPreferance;
+    
+    private String seconderyPhone;
 
     @OneToMany
     @JoinColumn(name="userId")
-    private List<House> houseList = new ArrayList<House>();
+    private List<House> houseList;
+   
+    @OneToMany
+    @JoinColumn(name="userId")
+    private List<UserAddress> userAddress;
 
     // ------------------------
     // PUBLIC METHODS
@@ -50,14 +55,6 @@ public class User {
 
     public User(long userId) {
         this.userId = userId;
-    }
-
-    public User(String email, String name) {
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNo = phoneNo;
     }
 
     // Getter and setter methods
@@ -119,11 +116,27 @@ public class User {
         this.houseList = houseList;
     }
 
-    public HouseAddress getHouseAddress() {
-        return houseAddress;
-    }
+	public String getSeconderyPhone() {
+		return seconderyPhone;
+	}
 
-    public void setHouseAddress(HouseAddress houseAddress) {
-        this.houseAddress = houseAddress;
-    }
+	public void setSeconderyPhone(String seconderyPhone) {
+		this.seconderyPhone = seconderyPhone;
+	}
+
+	public String getContactPreferance() {
+		return contactPreferance;
+	}
+
+	public void setContactPreferance(String contactPreferance) {
+		this.contactPreferance = contactPreferance;
+	}
+
+	public List<UserAddress> getUserAddress() {
+		return userAddress;
+	}
+
+	public void setUserAddress(List<UserAddress> userAddress) {
+		this.userAddress = userAddress;
+	}
 } // class User
