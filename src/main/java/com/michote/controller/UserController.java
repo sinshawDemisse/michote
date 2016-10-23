@@ -5,6 +5,7 @@ import com.michote.dao.SampleUserDao;
 import com.michote.entity.SampleUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,26 +26,26 @@ public class UserController {
      * @param name SampleUser's name
      * @return A string describing if the user is succesfully created or not.
      */
-    @RequestMapping("/create")
-    @ResponseBody
-    public String create(String email, String name) {
-        SampleUser user = null;
-        try {
-            user = new SampleUser(email, name);
-            userDao.save(user);
-        }
-        catch (Exception ex) {
-            return "Error creating the user: " + ex.toString();
-        }
-        return "SampleUser succesfully created! (id = " + user.getId() + ")";
-    }
+	@RequestMapping(value = "/create/{email}/{name}")
+	@ResponseBody
+	public String create(@PathVariable String email, @PathVariable String name) {
+		SampleUser user = null;
+		try {
+			user = new SampleUser(email, name);
+			userDao.save(user);
+		} catch (Exception ex) {
+			return "Error creating the user: " + ex.toString();
+		}
+		return "SampleUser succesfully created! (id = " + user.getId() + ")";
+	}
 
-    /**
-     * /delete  --> Delete the user having the passed id.
-     *
-     * @param id The id of the user to delete
-     * @return A string describing if the user is succesfully deleted or not.
-     */
+	/**
+	 * /delete --> Delete the user having the passed id.
+	 *
+	 * @param id
+	 *            The id of the user to delete
+	 * @return A string describing if the user is succesfully deleted or not.
+	 */
     @RequestMapping("/delete")
     @ResponseBody
     public String delete(long id) {

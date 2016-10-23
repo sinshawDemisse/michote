@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "image")
-public class Image {
+public class HouseImage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long imageId;

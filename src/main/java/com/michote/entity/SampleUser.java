@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
-@Table(name = "users")
+@Table(name = "sampleusers")
 public class SampleUser {
 
     // ------------------------
