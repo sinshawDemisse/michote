@@ -1,7 +1,7 @@
 package com.michote.controller;
 
-import com.michote.responseObjects.UserResponse;
-import com.michote.service.UserServiceInterface;
+import com.michote.responseObjects.HouseResponse;
+import com.michote.service.HouseServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,19 +14,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @Controller
-public class UserController {
+public class HouseController {
+
     /**
      * /create  --> Create a new user and save it in the database.
      *
-     * @param userResponse
+     * @param houseResponse
      * @return A string describing if the user is succesfully created or not.
      */
     @Autowired
-    private UserServiceInterface userServiceInterface;
+    private HouseServiceInterface houseServiceInterface;
 
-    @RequestMapping(value = "user/create", method = RequestMethod.POST)
+    @RequestMapping(value = "house/create", method = RequestMethod.POST)
     @ResponseBody
-    public String create(@RequestBody UserResponse userResponse) {
-        return userServiceInterface.create(userResponse);
+    public String create(@RequestBody HouseResponse houseResponse) {
+        return houseServiceInterface.create(houseResponse);
     }
 }
