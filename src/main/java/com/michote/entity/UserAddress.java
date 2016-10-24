@@ -1,7 +1,6 @@
 package com.michote.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /**
  * Created by jtq603 on 10/16/16.
@@ -27,7 +26,18 @@ public class UserAddress {
 
 	private String address2;
 
+	@ManyToOne
+	private User user;
+
 	public UserAddress() {
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public long getUserAddressId() {

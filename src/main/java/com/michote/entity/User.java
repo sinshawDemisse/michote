@@ -2,7 +2,6 @@ package com.michote.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,12 +38,12 @@ public class User {
     
     private String seconderyPhone;
 
-    @OneToMany
-    @JoinColumn(name="userId")
+    @OneToMany(mappedBy = "user")
+//    @JoinColumn(name="userId")
     private List<House> houseList;
    
-    @OneToMany
-    @JoinColumn(name="userId")
+    @OneToMany(mappedBy = "user")
+//    @JoinColumn(name="userId")
     private List<UserAddress> userAddress;
 
     // ------------------------
