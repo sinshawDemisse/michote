@@ -1,8 +1,7 @@
 package com.michote.entity;
 
-import java.util.List;
-
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by jtq603 on 10/16/16.
@@ -34,10 +33,14 @@ public class House {
 	private String address1;
 	private String address2;
 	private String parking;
+
 	
-	@OneToMany
-    @JoinColumn(name="houseId")
+	@OneToMany(mappedBy = "house")
+//    @JoinColumn(name="houseId")
 	List<HouseImage> images;
+
+	@ManyToOne
+	private User user;
 	
 	public List<HouseImage> getImages() {
 		return images;
@@ -205,5 +208,13 @@ public class House {
 
 	public void setPostingDate(String postingDate) {
 		this.postingDate = postingDate;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 }
