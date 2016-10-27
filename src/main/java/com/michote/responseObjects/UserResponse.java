@@ -20,9 +20,9 @@ public class UserResponse {
     // The user's phoneNo
     private String phoneNo;
 
-    private String contactPreferance;
+    private String contactPreference;
 
-    private String seconderyPhone;
+    private String secondaryPhone;
 
     public UserResponse() {
 
@@ -76,19 +76,19 @@ public class UserResponse {
         this.phoneNo = phoneNo;
     }
 
-    public String getContactPreferance() {
-        return contactPreferance;
+    public String getContactPreference() {
+        return contactPreference;
     }
 
-    public void setContactPreferance(String contactPreferance) {
-        this.contactPreferance = contactPreferance;
+    public void setContactPreference(String contactPreference) {
+        this.contactPreference = contactPreference;
     }
 
-    public String getSeconderyPhone() {
-        return seconderyPhone;
+    public String getSecondaryPhone() {
+        return secondaryPhone;
     }
 
-    public void setSeconderyPhone(String seconderyPhone) {
-        this.seconderyPhone = seconderyPhone;
+    public void setSecondaryPhone(String secondaryPhone) {
+        this.secondaryPhone = secondaryPhone;
     }
 }
