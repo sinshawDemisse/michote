@@ -9,7 +9,7 @@ public class HouseResponse {
     private String title;
     private String description;
     private Double rent;
-    private String availabelDate;
+    private String availableDate;
     private String postingDate;
     private String city;
     private String dog;
@@ -17,7 +17,7 @@ public class HouseResponse {
     private String laoundry;
     private String cat;
     private String furnished;
-    private String smooking;
+    private String smoking;
     private String wheelChairAccessible;
     private String State;
     private String country;
@@ -69,12 +69,12 @@ public class HouseResponse {
         this.rent = rent;
     }
 
-    public String getAvailabelDate() {
-        return availabelDate;
+    public String getAvailableDate() {
+        return availableDate;
     }
 
-    public void setAvailabelDate(String availabelDate) {
-        this.availabelDate = availabelDate;
+    public void setAvailableDate(String availableDate) {
+        this.availableDate = availableDate;
     }
 
     public String getPostingDate() {
@@ -133,12 +133,12 @@ public class HouseResponse {
         this.furnished = furnished;
     }
 
-    public String getSmooking() {
-        return smooking;
+    public String getSmoking() {
+        return smoking;
     }
 
-    public void setSmooking(String smooking) {
-        this.smooking = smooking;
+    public void setSmoking(String smoking) {
+        this.smoking = smoking;
     }
 
     public String getWheelChairAccessible() {
