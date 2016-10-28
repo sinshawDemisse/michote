@@ -7,6 +7,9 @@ import com.michote.service.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+import java.sql.Timestamp;
+
 /**
  * Created by jtq603 on 10/23/16.
  */
@@ -29,6 +32,8 @@ public class UserServiceImp implements UserServiceInterface {
             user.setSecondaryPhone(userResponse.getSecondaryPhone());
             user.setUserId(userResponse.getUserId());
             user.setPhoneNo(userResponse.getPhoneNo());
+            user.setCreatedDate(new Timestamp(new Date().getTime()));
+            user.setUpdatedDate(new Timestamp(new Date().getTime()));
             userDao.save(user);
         } catch (Exception ex) {
             return "Error creating the user: " + ex.toString();
