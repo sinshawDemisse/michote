@@ -1,5 +1,7 @@
 package com.michote.responseObjects;
 
+import java.sql.Timestamp;
+
 /**
  * Created by jtq603 on 10/23/16.
  */
@@ -9,8 +11,8 @@ public class HouseResponse {
     private String title;
     private String description;
     private Double rent;
-    private String availableDate;
-    private String postingDate;
+    private Timestamp availableDate;
+    private Timestamp postingDate;
     private String city;
     private String dog;
     private String sex;
@@ -25,6 +27,7 @@ public class HouseResponse {
     private String address1;
     private String address2;
     private String parking;
+    private Timestamp updatedDate;
 
     public HouseResponse() {
     }
@@ -69,19 +72,19 @@ public class HouseResponse {
         this.rent = rent;
     }
 
-    public String getAvailableDate() {
+    public Timestamp getAvailableDate() {
         return availableDate;
     }
 
-    public void setAvailableDate(String availableDate) {
+    public void setAvailableDate(Timestamp availableDate) {
         this.availableDate = availableDate;
     }
 
-    public String getPostingDate() {
+    public Timestamp getPostingDate() {
         return postingDate;
     }
 
-    public void setPostingDate(String postingDate) {
+    public void setPostingDate(Timestamp postingDate) {
         this.postingDate = postingDate;
     }
 
@@ -195,5 +198,13 @@ public class HouseResponse {
 
     public void setParking(String parking) {
         this.parking = parking;
+    }
+
+    public Timestamp getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Timestamp updatedDate) {
+        this.updatedDate = updatedDate;
     }
 }

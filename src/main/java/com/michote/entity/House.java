@@ -1,6 +1,7 @@
 package com.michote.entity;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -17,8 +18,8 @@ public class House {
 	private String title;
 	private String description;
 	private Double rent;
-	private String availableDate;
-	private String postingDate;
+	private Timestamp availableDate;
+	private Timestamp postingDate;
 	private String city;
 	private String dog;
 	private String sex;
@@ -33,6 +34,7 @@ public class House {
 	private String address1;
 	private String address2;
 	private String parking;
+	private Timestamp updatedDate;
 
 	
 	@OneToMany(mappedBy = "house")
@@ -194,19 +196,19 @@ public class House {
 		this.rent = rent;
 	}
 
-	public String getAvailableDate() {
+	public Timestamp getAvailableDate() {
 		return availableDate;
 	}
 
-	public void setAvailableDate(String availableDate) {
+	public void setAvailableDate(Timestamp availableDate) {
 		this.availableDate = availableDate;
 	}
 
-	public String getPostingDate() {
+	public Timestamp getPostingDate() {
 		return postingDate;
 	}
 
-	public void setPostingDate(String postingDate) {
+	public void setPostingDate(Timestamp postingDate) {
 		this.postingDate = postingDate;
 	}
 
@@ -216,5 +218,13 @@ public class House {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Timestamp getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Timestamp updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 }

@@ -2,6 +2,8 @@ package com.michote.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -37,6 +39,8 @@ public class User {
     private String contactPreference;
     
     private String secondaryPhone;
+    private Timestamp createdDate;
+    private Timestamp updatedDate;
 
     @OneToMany(mappedBy = "user")
 //    @JoinColumn(name="userId")
@@ -138,4 +142,20 @@ public class User {
 	public void setUserAddress(List<UserAddress> userAddress) {
 		this.userAddress = userAddress;
 	}
+
+    public Timestamp getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Timestamp getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedON) {
+        updatedDate = updatedDate;
+    }
 } // class User
