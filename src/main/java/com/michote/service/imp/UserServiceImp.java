@@ -25,10 +25,10 @@ public class UserServiceImp implements UserServiceInterface {
             user.setPassword(userResponse.getPassword());
             user.setFirstName(userResponse.getFirstName());
             user.setLastName(userResponse.getLastName());
-            user.setContactPreference(user.getContactPreference());
-            user.setSecondaryPhone(user.getSecondaryPhone());
-            user.setUserId(user.getUserId());
-            user.setPhoneNo(user.getPhoneNo());
+            user.setContactPreference(userResponse.getContactPreference());
+            user.setSecondaryPhone(userResponse.getSecondaryPhone());
+            user.setUserId(userResponse.getUserId());
+            user.setPhoneNo(userResponse.getPhoneNo());
             userDao.save(user);
         } catch (Exception ex) {
             return "Error creating the user: " + ex.toString();

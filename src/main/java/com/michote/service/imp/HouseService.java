@@ -29,6 +29,23 @@ public class HouseService implements HouseServiceInterface {
             house.setAddress1(houseResponse.getAddress1());
             house.setCountry(houseResponse.getCountry());
             house.setUser(user);
+            house.setAddress2(houseResponse.getAddress2());
+            house.setAvailableDate(houseResponse.getAvailableDate());
+            house.setCat(houseResponse.getCat());
+            house.setCity(houseResponse.getCity());
+            house.setDescription(houseResponse.getDescription());
+            house.setDog(houseResponse.getDog());
+            house.setFurnished(houseResponse.getFurnished());
+            house.setLaundry(houseResponse.getLaundry());
+            house.setWheelChairAccessible(houseResponse.getWheelChairAccessible());
+            house.setZip(houseResponse.getZip());
+            house.setTitle(houseResponse.getTitle());
+            house.setState(houseResponse.getState());
+            house.setSex(houseResponse.getSex());
+            house.setSmoking(houseResponse.getSmoking());
+            house.setRent(houseResponse.getRent());
+            house.setPostingDate(houseResponse.getPostingDate());
+            house.setParking(houseResponse.getParking());
             houseDao.save(house);
 
         } catch (Exception ex) {
