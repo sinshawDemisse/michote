@@ -22,7 +22,7 @@ public class House {
 	private String city;
 	private String dog;
 	private String sex;
-	private String laoundry;
+	private String laundry;
 	private String cat;
 	private String furnished;
 	private String smoking;
@@ -74,12 +74,12 @@ public class House {
 		this.sex = sex;
 	}
 
-	public String getLaoundry() {
-		return laoundry;
+	public String getLaundry() {
+		return laundry;
 	}
 
-	public void setLaoundry(String laoundry) {
-		this.laoundry = laoundry;
+	public void setLaundry(String laundry) {
+		this.laundry = laundry;
 	}
 
 	public String getCat() {
