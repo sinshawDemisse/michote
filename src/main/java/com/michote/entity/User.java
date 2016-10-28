@@ -34,9 +34,9 @@ public class User {
     // The user's phoneNo
     private String phoneNo;
     
-    private String contactPreferance;
+    private String contactPreference;
     
-    private String seconderyPhone;
+    private String secondaryPhone;
 
     @OneToMany(mappedBy = "user")
 //    @JoinColumn(name="userId")
@@ -115,20 +115,20 @@ public class User {
         this.houseList = houseList;
     }
 
-	public String getSeconderyPhone() {
-		return seconderyPhone;
+	public String getSecondaryPhone() {
+		return secondaryPhone;
 	}
 
-	public void setSeconderyPhone(String seconderyPhone) {
-		this.seconderyPhone = seconderyPhone;
+	public void setSecondaryPhone(String secondaryPhone) {
+		this.secondaryPhone = secondaryPhone;
 	}
 
-	public String getContactPreferance() {
-		return contactPreferance;
+	public String getContactPreference() {
+		return contactPreference;
 	}
 
-	public void setContactPreferance(String contactPreferance) {
-		this.contactPreferance = contactPreferance;
+	public void setContactPreference(String contactPreference) {
+		this.contactPreference = contactPreference;
 	}
 
 	public List<UserAddress> getUserAddress() {
