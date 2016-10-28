@@ -9,6 +9,10 @@ import com.michote.service.HouseServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by jtq603 on 10/23/16.
  */
@@ -20,6 +24,9 @@ public class HouseService implements HouseServiceInterface {
     @Autowired
     private HouseDao houseDao;
 
+    SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    Date date;
+
     @Override
     public String create(HouseResponse houseResponse) {
         House house = null;
@@ -30,7 +37,10 @@ public class HouseService implements HouseServiceInterface {
             house.setCountry(houseResponse.getCountry());
             house.setUser(user);
             house.setAddress2(houseResponse.getAddress2());
-            house.setAvailableDate(houseResponse.getAvailableDate());
+            if(houseResponse.getAvailableDate() != null){
+                date = sdf.parse(houseResponse.getAvailableDate());
+                house.setAvailableDate(new Timestamp(date.getTime()));
+            }
             house.setCat(houseResponse.getCat());
             house.setCity(houseResponse.getCity());
             house.setDescription(houseResponse.getDescription());
@@ -44,7 +54,10 @@ public class HouseService implements HouseServiceInterface {
             house.setSex(houseResponse.getSex());
             house.setSmoking(houseResponse.getSmoking());
             house.setRent(houseResponse.getRent());
-            house.setPostingDate(houseResponse.getPostingDate());
+            if(houseResponse.getPostingDate() != null){
+                date = sdf.parse(houseResponse.getPostingDate());
+                house.setPostingDate(new Timestamp(date.getTime()));
+            }
             house.setParking(houseResponse.getParking());
             houseDao.save(house);
 

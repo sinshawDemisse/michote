@@ -2,7 +2,6 @@ package com.michote.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -155,7 +154,7 @@ public class User {
         return updatedDate;
     }
 
-    public void setUpdatedDate(Date updatedON) {
-        updatedDate = updatedDate;
+    public void setUpdatedDate(Timestamp updatedDate) {
+        this.updatedDate = updatedDate;
     }
 } // class User
