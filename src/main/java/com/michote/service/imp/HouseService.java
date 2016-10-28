@@ -6,8 +6,16 @@ import com.michote.entity.House;
 import com.michote.entity.User;
 import com.michote.responseObjects.HouseResponse;
 import com.michote.service.HouseServiceInterface;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.print.attribute.standard.DateTimeAtProcessing;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import static org.assertj.core.api.Assertions.setRemoveAssertJRelatedElementsFromStackTrace;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -68,4 +76,41 @@ public class HouseService implements HouseServiceInterface {
 
         return "created" + house.getHouseId();
     }
+
+	@Override
+	public List<HouseResponse> viewHouseByZip(int zip) {
+		List<House> houses = houseDao.findByZip(Integer.toString(zip));
+		List<HouseResponse> houseResponses = new ArrayList<>();
+		for (House house : houses) {
+			HouseResponse houseResponse = new HouseResponse();
+			houseResponse.setDescription(house.getDescription());
+			houseResponse.setAddress1(house.getAddress1());
+			houseResponse.setAddress2(house.getAddress2());
+			if (house.getAvailableDate() != null) {
+				houseResponse.setAvailableDate(sdf.format(house.getAvailableDate()));
+			}
+			houseResponse.setCat(house.getCat());
+			houseResponse.setCity(house.getCity());
+			houseResponse.setCountry(house.getCountry());
+			houseResponse.setDog(house.getDog());
+			houseResponse.setFurnished(house.getFurnished());
+			houseResponse.setLaundry(house.getLaundry());
+			houseResponse.setParking(house.getParking());
+			if (house.getPostingDate() != null) {
+				houseResponse.setPostingDate(sdf.format(house.getPostingDate()));
+			}
+			houseResponse.setRent(house.getRent());
+			houseResponse.setSex(house.getSex());
+			houseResponse.setSmoking(house.getSmoking());
+			houseResponse.setState(house.getState());
+			houseResponse.setTitle(house.getTitle());
+			if (house.getUpdatedDate() != null) {
+				houseResponse.setUpdatedDate(sdf.format(house.getUpdatedDate()));
+			}
+			houseResponse.setWheelChairAccessible(house.getWheelChairAccessible());
+			houseResponse.setZip(houseResponse.getZip());
+			houseResponses.add(houseResponse);
+		}
+		return houseResponses;
+	}
 }
