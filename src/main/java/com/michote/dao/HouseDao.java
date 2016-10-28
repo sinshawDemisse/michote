@@ -2,7 +2,12 @@ package com.michote.dao;
 
 
 import com.michote.entity.House;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -10,7 +15,7 @@ import javax.transaction.Transactional;
  * Created by jtq603 on 10/15/16.
  */
 
-@Transactional
+@Repository
 public interface HouseDao extends CrudRepository<House, Long> {
 
     /**
@@ -20,7 +25,7 @@ public interface HouseDao extends CrudRepository<House, Long> {
      */
     public House findByHouseId(long houseId);
 
-
+    public List<House> findByZip(String zip);
 
 }
 
