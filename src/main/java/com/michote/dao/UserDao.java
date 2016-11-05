@@ -1,11 +1,10 @@
 package com.michote.dao;
 
 
-import com.michote.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
+import com.michote.entity.User;
 
 /**
  * Created by jtq603 on 10/15/16.

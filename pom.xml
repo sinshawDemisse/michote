@@ -58,6 +58,19 @@
 			<version>3.3.6</version>
 			<scope>runtime</scope>
 		</dependency>
+		
+			<!-- swagger dependency -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -67,7 +80,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<jvmArguments>
-						-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
+						-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
 					</jvmArguments>
 				</configuration>
 			</plugin>
