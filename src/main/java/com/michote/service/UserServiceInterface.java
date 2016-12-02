@@ -3,8 +3,10 @@
  */
 package com.michote.service;
 
-import com.michote.responseObjects.UserResponse;
 import org.springframework.stereotype.Service;
+
+import com.michote.responseObjects.LoginRequestObject;
+import com.michote.responseObjects.UserResponse;
 
 /**
  * @author aberehamwodajie
@@ -16,5 +18,6 @@ import org.springframework.stereotype.Service;
 public interface UserServiceInterface {
 
    public String create(UserResponse userResponse);
+   public UserResponse Login(LoginRequestObject loginObject);
 
 }

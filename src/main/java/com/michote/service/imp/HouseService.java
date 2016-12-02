@@ -1,25 +1,20 @@
 package com.michote.service.imp;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.michote.dao.HouseDao;
 import com.michote.dao.UserDao;
 import com.michote.entity.House;
 import com.michote.entity.User;
 import com.michote.responseObjects.HouseResponse;
 import com.michote.service.HouseServiceInterface;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.print.attribute.standard.DateTimeAtProcessing;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import static org.assertj.core.api.Assertions.setRemoveAssertJRelatedElementsFromStackTrace;
-
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by jtq603 on 10/23/16.
